@@ -230,7 +230,7 @@ class ControllerExtensionPaymentAlsat extends Controller
                             // Set Order status id to the configured status id and add a history.
                             $model->addOrderHistory($verify_order_id, $config_successful_payment_status, $comment, true);
                             // Add another history.
-                            $comment2 = 'status: ' . $result->PSP->IsSuccess . ' - track id: ' . $result->PSP->TraceNumber . ' - card no: ' . $result->PSP->TrxMaskedCardNumber . ' - hashed card no: ' . $result->PSP->TrxHashedCardNumber;
+                            $comment2 = 'card no: ' . $result->PSP->TrxMaskedCardNumber;
 
                             $model->addOrderHistory($order_id, $config_successful_payment_status, $comment2, true);
                             $data['peyment_result'] = $comment;
